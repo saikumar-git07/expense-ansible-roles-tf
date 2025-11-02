@@ -1,0 +1,27 @@
+- name: create ec2 and r53 records
+  hosts: localhost
+  vars:
+    zone: daws78s.online
+    instances:
+    - db
+    - backend
+    - frontend
+  tasks:
+  - name: create ec2 instances
+    amazon.aws.ec2_instance:
+      instance_type: t2.micro
+      name: "{{ item }}"
+      ssecurity_group: Allow-everything
+      image_id: ami-09c813fb71547fc4f
+      tags:
+        Name: "{{ item }}"
+    loop: "{{ instances }}"
+    register: ec2_instances_info
+
+  - name: print output
+    ansible.builtin.debug:
+      msg: "Output: {{ ec2_instances_info }}"
+
+
+
+
