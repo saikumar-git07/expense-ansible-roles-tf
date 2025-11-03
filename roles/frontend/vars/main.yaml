@@ -1,3 +1,2 @@
-BACKEND_API_URL: backend.devopswithaws.store
 component: frontend
 app_location: /usr/share/nginx/html

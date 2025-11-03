@@ -2,3 +2,4 @@ login_user: root
 login_host: db-dev.devopswithaws.store
 login_password: ExpenseApp1
 DB_HOST: db-dev.devopswithaws.store
+BACKEND_API_URL: backend.app-dev.devopswithaws.store
